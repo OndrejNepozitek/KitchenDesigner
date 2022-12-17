@@ -2,7 +2,7 @@ using HarmonyLib;
 using KitchenMods;
 using UnityEngine;
 
-namespace ONe.KitchenDesigner.Workshop
+namespace ONe.KitchenDesigner
 {
     internal class KitchenDesigner : IModInitializer
     {

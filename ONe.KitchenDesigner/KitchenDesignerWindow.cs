@@ -5,7 +5,7 @@ using ONe.KitchenDesigner.KitchenDesigns;
 using Unity.Entities;
 using UnityEngine;
 
-namespace ONe.KitchenDesigner.Workshop;
+namespace ONe.KitchenDesigner;
 
 public static class KitchenDesignerWindow
 {

@@ -6,7 +6,6 @@ using Kitchen;
 using Kitchen.Layouts;
 using Kitchen.Layouts.Features;
 using KitchenData;
-using ONe.KitchenDesigner.Workshop;
 using Unity.Entities;
 using UnityEngine;
 using Random = UnityEngine.Random;

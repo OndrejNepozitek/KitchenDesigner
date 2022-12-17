@@ -2,7 +2,7 @@ using HarmonyLib;
 using Kitchen;
 using UnityEngine;
 
-namespace ONe.KitchenDesigner.Workshop;
+namespace ONe.KitchenDesigner;
 
 [HarmonyPatch(typeof(LayoutView), nameof(LayoutView.Initialise))]
 public static class LayoutViewNavMeshPatch

@@ -6,7 +6,6 @@ using Kitchen.Layouts;
 using Kitchen.Layouts.Features;
 using KitchenData;
 using ONe.KitchenDesigner.KitchenDesigns.Decoders;
-using ONe.KitchenDesigner.Workshop;
 using UnityEngine;
 
 namespace ONe.KitchenDesigner.KitchenDesigns;

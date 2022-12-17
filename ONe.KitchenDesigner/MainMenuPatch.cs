@@ -1,9 +1,8 @@
 using System.Reflection;
 using HarmonyLib;
 using Kitchen;
-using UnityEngine;
 
-namespace ONe.KitchenDesigner.Workshop;
+namespace ONe.KitchenDesigner;
 
 [HarmonyPatch]
 [HarmonyPatch(typeof (MainMenu), "Setup")]

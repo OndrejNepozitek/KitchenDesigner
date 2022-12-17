@@ -2,7 +2,7 @@ using Kitchen;
 using Kitchen.Modules;
 using UnityEngine;
 
-namespace Kitchen.ONe.KitchenDesigner.Workshop;
+namespace ONe.KitchenDesigner;
 
 public class KitchenDesignerMenu<T> : Menu<T>
 {

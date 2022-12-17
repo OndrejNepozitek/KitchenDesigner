@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ONe.KitchenDesigner.Workshop;
+namespace ONe.KitchenDesigner;
 
 public static class LogHelper
 {
