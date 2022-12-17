@@ -35,7 +35,6 @@ namespace ONe.KitchenDesigner
             KitchenDesignerGUIManager = GameObject.AddComponent<KitchenDesignerGUIManager>();
             Object.DontDestroyOnLoad(GameObject);
             
-            
             var harmony = new Harmony("ONe.KitchenDesigner");
             harmony.PatchAll(GetType().Assembly);
         }

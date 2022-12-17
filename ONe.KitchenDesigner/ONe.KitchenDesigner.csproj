@@ -2,7 +2,7 @@
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
-        <DebugType>full</DebugType>
+        <DebugType>portable</DebugType>
         <AssetTargetFallback>
             net472
         </AssetTargetFallback>
@@ -15,6 +15,6 @@
     
     <ItemGroup>
         <PackageReference Include="Lib.Harmony" Version="2.2.2" NoWarn="NU1701" />
-        <PackageReference Include="ONe.PlateUp.Mod.Props" Version="0.0.9" />
+        <PackageReference Include="ONe.PlateUp.Mod.Props" Version="0.0.10" />
     </ItemGroup>
 </Project>
