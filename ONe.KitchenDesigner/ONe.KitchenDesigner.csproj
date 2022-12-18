@@ -9,9 +9,10 @@
     </PropertyGroup>
     
     <PropertyGroup>
-        <PlateUpDir>C:\Personal\PlateUp</PlateUpDir>
         <LaunchGameAfterBuild>true</LaunchGameAfterBuild>
     </PropertyGroup>
+
+    <Import Condition="Exists('./Local.Build.props')" Project="./Local.Build.props" />
     
     <ItemGroup>
         <PackageReference Include="Lib.Harmony" Version="2.2.2" NoWarn="NU1701" />
