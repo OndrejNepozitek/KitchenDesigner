@@ -1,6 +1,6 @@
 # Kitchen Designer
 
-Kitchen Designer is a mod that lets you play on custom kitchen designs. There is a dedicated website (https://plateuptools.com/kitchen-designer) that you can visit to learn more.
+Kitchen Designer is a PlateUp! mod that lets you play on custom kitchen designs. There is a dedicated website (https://plateuptools.com/kitchen-designer) that you can visit to learn more.
 
 > **Note:** While the PlateUp Workshop is not fully public, the [plateuptools.com/kitchen-designer](https://plateuptools.com/kitchen-designer) website contains outdated installation instructions that are meant for the 3rd party BepInEx mod loader.
 
