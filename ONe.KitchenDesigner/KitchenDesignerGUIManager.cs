@@ -5,6 +5,7 @@ namespace ONe.KitchenDesigner;
 public class KitchenDesignerGUIManager : MonoBehaviour
 {
     private bool _show;
+    private static readonly int WindowId = nameof(KitchenDesigner).GetHashCode();
 
     public void Show()
     {
@@ -41,10 +42,9 @@ public class KitchenDesignerGUIManager : MonoBehaviour
             var guiStyle = GUI.skin.window;
             guiStyle.normal.background = backgroundTexture;
             
-            var id = 43;
             GUI.Box(windowRect, GUIContent.none, new GUIStyle { normal = new GUIStyleState { background = backgroundTexture } });
-            GUILayout.Window(id, windowRect, Window, "Kitchen Designer configuration");
-            GUI.FocusWindow(id);
+            GUILayout.Window(WindowId, windowRect, Window, "Kitchen Designer configuration");
+            GUI.FocusWindow(WindowId);
         }
     }
     
