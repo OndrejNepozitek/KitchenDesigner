@@ -155,7 +155,7 @@ public static class KitchenDesignerWindow
             case State.Initial:
                 return $"Unexpected state ({State.Initial})";
             case State.NoHeadquarters:
-                return "You must be inside the headquarters.";
+                return "You must be inside the headquarters and be the host of the game.";
             case State.NoSeededRuns:
                 return "Seeded runs not available (you need to be at least level 5).";
             case State.NoDesignProvided:
