@@ -11,3 +11,4 @@ jobs:
       - uses: google-github-actions/release-please-action@v3
         with:
           release-type: simple
+          changelog-types: '[{"type":"feat","section":"New Features","hidden":false},{"type":"fix","section":"Bug Fixes","hidden":false},{"type":"chore","section":"Miscellaneous","hidden":false}]'
