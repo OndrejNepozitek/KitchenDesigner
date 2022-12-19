@@ -14,29 +14,20 @@ namespace ONe.KitchenDesigner
         
         public void PostActivate(Mod mod) 
         {
-            
+            Debug.Log("KitchenDesigner Init");
+            var harmony = new Harmony("ONe.KitchenDesigner");
+            harmony.PatchAll(GetType().Assembly);
         }
 
         public void PreInject()
         {
-            Init();
+            GameObject = new GameObject("Kitchen Designer");
+            KitchenDesignerGUIManager = GameObject.AddComponent<KitchenDesignerGUIManager>();
         }
 
         public void PostInject()
         {
 
-        }
-
-        private void Init()
-        {
-            Debug.Log("KitchenDesigner Init");
-            
-            GameObject = new GameObject("Kitchen Designer");
-            KitchenDesignerGUIManager = GameObject.AddComponent<KitchenDesignerGUIManager>();
-            Object.DontDestroyOnLoad(GameObject);
-            
-            var harmony = new Harmony("ONe.KitchenDesigner");
-            harmony.PatchAll(GetType().Assembly);
         }
     }
 }
