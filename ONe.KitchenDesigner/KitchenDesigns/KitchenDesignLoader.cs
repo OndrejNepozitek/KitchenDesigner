@@ -38,6 +38,11 @@ public static class KitchenDesignLoader
     /// Whether the last generation attempt was successful or not.
     /// </summary>
     public static bool WasLastGenerationSuccessful { get; private set; }
+    
+    /// <summary>
+    /// The reason why the last generation attempt failed (if it failed)-
+    /// </summary>
+    public static DesignLoadError LastGenerationError { get; private set; }
 
     private static KitchenDesign _kitchenDesign;
     private static Seed _seed;
@@ -126,7 +131,8 @@ public static class KitchenDesignLoader
                 entityManager,
                 _kitchenDesign.Blueprint,
                 _kitchenDesign.Profile,
-                _kitchenDesign.Setting
+                _kitchenDesign.Setting,
+                out var errors
             );
             var isValid = layoutEntity != Entity.Null;
 
@@ -139,6 +145,22 @@ public static class KitchenDesignLoader
             }
             else
             {
+                var errorsCount = errors.Count;
+                var majorityReason = DesignLoadError.Generic;
+
+                foreach (var pair in errors)
+                {
+                    var error = pair.Key;
+                    var count = pair.Value;
+
+                    if (count > errorsCount / 2f)
+                    {
+                        majorityReason = error;
+                        break;
+                    }
+                }
+
+                LastGenerationError = majorityReason;
                 WasLastGenerationSuccessful = false;
             }
 
@@ -166,13 +188,16 @@ public static class KitchenDesignLoader
         EntityManager em,
         LayoutBlueprint layoutBlueprintFixed,
         LayoutProfile profile,
-        RestaurantSetting setting)
+        RestaurantSetting setting,
+        out Dictionary<DesignLoadError, int> errors)
     {
         var entity = em.CreateEntity((ComponentType)typeof(CStartingItem), (ComponentType)typeof(CLayoutRoomTile),
             (ComponentType)typeof(CLayoutFeature), (ComponentType)typeof(CLayoutAppliancePlacement));
         var layoutDecorator = (LayoutDecorator)null;
         var layoutBlueprint = (LayoutBlueprint)null;
         var flag = false;
+        errors = new Dictionary<DesignLoadError, int>();
+        
         for (int index = 0; index < CreateLayoutHelper.MapAttemptsMax; ++index)
         {
             LogHelper.Log($"Loading kitchen design, attempt {index + 1}");
@@ -188,6 +213,7 @@ public static class KitchenDesignLoader
             catch (LayoutFailureException ex)
             {
                 LogHelper.Log(ex.Message);
+                LogLoadingError(ex, errors);
             }
         }
 
@@ -204,6 +230,25 @@ public static class KitchenDesignLoader
             buffer.Add(decoration);
 
         return entity;
+    }
+
+    private static void LogLoadingError(LayoutFailureException exception, Dictionary<DesignLoadError, int> errors)
+    {
+        var error = DesignLoadError.Generic;
+
+        if (exception.Message == "Not enough spaces to place kitchen equipment")
+        {
+            error = DesignLoadError.CannotDecorateKitchen;
+        }
+
+        if (errors.TryGetValue(error, out var count))
+        {
+            errors[error] = count + 1;
+        }
+        else
+        {
+            errors[error] = 1;
+        }
     }
 
     private static void PostProcessDesign(KitchenDesign design)

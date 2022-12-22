@@ -171,9 +171,21 @@ public static class KitchenDesignerWindow
             case State.LayoutGeneratingSuccess:
                 return "Layout generated, you can close this window and play.";
             case State.LayoutGeneratingFailure:
-                return "Layout not generated, please see the console for errors.";
+                return $"Layout not generated, please see the log for errors. Possible reason: {GetLayoutGeneratingFailureReason()}";
             default:
                 return "Unexpected state";
+        }
+    }
+
+    private static string GetLayoutGeneratingFailureReason()
+    {
+        switch (KitchenDesignLoader.LastGenerationError)
+        {
+            case DesignLoadError.CannotDecorateKitchen:
+                return "Could not decorate kitchen. Please make sure the kitchen is large enough for all the required appliances.";
+            
+            default:
+                return "Unknown";
         }
     }
 
@@ -221,7 +233,7 @@ public static class KitchenDesignerWindow
         }
         
         GUILayout.BeginHorizontal();
-        GUILayout.Label($"Status: ", GUILayout.ExpandWidth(false));
+        GUILayout.Label($"Status: ", GUILayout.Width(75));
         GUILayout.Label(GetStatusText(), style, GUILayout.ExpandWidth(true));
         GUILayout.EndHorizontal();
         
