@@ -1,5 +1,23 @@
 # Changelog
 
+## [1.0.6](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.0.5...v1.0.6) (2022-12-22)
+
+
+### Bug Fixes
+
+* add the chore type to release-please ([dcedb7a](https://github.com/OndrejNepozitek/KitchenDesigner/commit/dcedb7a3423bae40f3b55a96e21a0fbaae51d8e7))
+
+
+### New Features
+
+* try to detect whether the layout generation process failed due to not having enough space to decorate the kitchen ([2c05358](https://github.com/OndrejNepozitek/KitchenDesigner/commit/2c0535807ddfd576c28b8827353a9649093fdae8))
+
+
+### Miscellaneous
+
+* bump version to 1.0.6 ([ff72852](https://github.com/OndrejNepozitek/KitchenDesigner/commit/ff72852fad4f3a55d2c6c87505079111e5d162db))
+* release 1.0.6 ([624d431](https://github.com/OndrejNepozitek/KitchenDesigner/commit/624d4313f577c5ea4f70dd0e724487e1afbbda19))
+
 ## [1.0.5](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.0.4...v1.0.5) (2022-12-19)
 
 
