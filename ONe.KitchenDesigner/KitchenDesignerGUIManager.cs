@@ -43,7 +43,7 @@ public class KitchenDesignerGUIManager : MonoBehaviour
             guiStyle.normal.background = backgroundTexture;
             
             GUI.Box(windowRect, GUIContent.none, new GUIStyle { normal = new GUIStyleState { background = backgroundTexture } });
-            GUILayout.Window(WindowId, windowRect, Window, "Kitchen Designer configuration");
+            GUILayout.Window(WindowId, windowRect, Window, "Kitchen Designer configuration (press ESC to close window)");
             GUI.FocusWindow(WindowId);
         }
     }
