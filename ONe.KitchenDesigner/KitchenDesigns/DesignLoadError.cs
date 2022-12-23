@@ -3,5 +3,7 @@ namespace ONe.KitchenDesigner.KitchenDesigns;
 public enum DesignLoadError
 {
     Generic,
-    CannotDecorateKitchen
+    CannotDecorateKitchen,
+    CannotDecorateDining,
+    NorthPole
 }

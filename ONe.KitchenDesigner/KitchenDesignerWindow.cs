@@ -185,6 +185,12 @@ public static class KitchenDesignerWindow
             case DesignLoadError.CannotDecorateKitchen:
                 return "Could not decorate kitchen. Please make sure the kitchen is large enough for all the required appliances.";
             
+            case DesignLoadError.CannotDecorateDining:
+                return "Could not decorate dining room. Please make sure the dining is large enough for all the tables.";
+            
+            case DesignLoadError.NorthPole:
+                return "North Pole maps are harder to design! 1) You need a room (garden) on the left side 2) You need a room (garden) on the right side (must be a different room) 3) The room on the left should be connected to both the kitchen and the dining room 4) Have hatches between the outside rooms and the kitchen and dining room 5) Experiment!";
+            
             default:
                 return "Unknown";
         }

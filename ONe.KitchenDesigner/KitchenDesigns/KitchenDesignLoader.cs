@@ -145,22 +145,10 @@ public static class KitchenDesignLoader
             }
             else
             {
-                var errorsCount = errors.Count;
-                var majorityReason = DesignLoadError.Generic;
+                var highestReasonCount = errors.Values.Max();
+                var mostCommonReason = errors.First(x => x.Value == highestReasonCount).Key;
 
-                foreach (var pair in errors)
-                {
-                    var error = pair.Key;
-                    var count = pair.Value;
-
-                    if (count > errorsCount / 2f)
-                    {
-                        majorityReason = error;
-                        break;
-                    }
-                }
-
-                LastGenerationError = majorityReason;
+                LastGenerationError = mostCommonReason;
                 WasLastGenerationSuccessful = false;
             }
 
@@ -239,6 +227,14 @@ public static class KitchenDesignLoader
         if (exception.Message == "Not enough spaces to place kitchen equipment")
         {
             error = DesignLoadError.CannotDecorateKitchen;
+        }
+        else if (exception.Message == "Failed to decorate dining room")
+        {
+            error = DesignLoadError.CannotDecorateKitchen;
+        }
+        else if (exception.Message.StartsWith("Failed to apply decorator Kitchen.ConveyorDecorator"))
+        {
+            error = DesignLoadError.NorthPole;
         }
 
         if (errors.TryGetValue(error, out var count))
