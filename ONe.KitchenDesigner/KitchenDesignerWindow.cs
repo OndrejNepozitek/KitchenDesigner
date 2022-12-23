@@ -29,6 +29,7 @@ public static class KitchenDesignerWindow
     };
 
     private static GUIStyle _headerStyle;
+    private static Vector2 _scrollPos;
 
     private static void DoStateTransition(ref bool hasChanges, bool buttonClicked)
     {
@@ -201,6 +202,8 @@ public static class KitchenDesignerWindow
             fontSize = 20
         };
         GUILayout.Label($"Kitchen Designer v{KitchenDesigner.Version}", _headerStyle, GUILayout.ExpandWidth(true));
+        
+        _scrollPos = GUILayout.BeginScrollView(_scrollPos, false, true, GUIStyle.none, GUI.skin.verticalScrollbar);
 
         GUILayout.Label("Copy your Exported Kitchen Design Description in the text area below:");
         
@@ -265,6 +268,8 @@ public static class KitchenDesignerWindow
         GUILayout.Label("Large layout support (experimental)", GUILayout.Width(350));
         LargeLayoutSupport = GUILayout.Toggle(LargeLayoutSupport, LargeLayoutSupport ? "Enabled" : "Disabled", GUILayout.ExpandWidth(true));
         GUILayout.EndHorizontal();
+        
+        GUILayout.EndScrollView();
         
         GUILayout.EndVertical();
     }
