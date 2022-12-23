@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.0](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.0.6...v1.1.0) (2022-12-23)
+
+
+### Bug Fixes
+
+* change the window title to include that it can be closed by pressing ESC ([565a4c0](https://github.com/OndrejNepozitek/KitchenDesigner/commit/565a4c02cafdf8ea89934cf5a2364617aa39aba0))
+
+
+### New Features
+
+* add vertical scrollbar ([ae32c84](https://github.com/OndrejNepozitek/KitchenDesigner/commit/ae32c8423908a27181ac53b482675a1945bb1379))
+* North Pole support, better error messages ([23a7373](https://github.com/OndrejNepozitek/KitchenDesigner/commit/23a7373b3165a223cff4a6c9b23491ed5219b86f))
+
 ## [1.0.6](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.0.5...v1.0.6) (2022-12-22)
 
 
