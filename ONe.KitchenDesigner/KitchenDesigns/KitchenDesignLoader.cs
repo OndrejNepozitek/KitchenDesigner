@@ -230,7 +230,7 @@ public static class KitchenDesignLoader
         }
         else if (exception.Message == "Failed to decorate dining room")
         {
-            error = DesignLoadError.CannotDecorateKitchen;
+            error = DesignLoadError.CannotDecorateDining;
         }
         else if (exception.Message.StartsWith("Failed to apply decorator Kitchen.ConveyorDecorator"))
         {
