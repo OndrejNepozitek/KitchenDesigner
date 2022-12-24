@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.1.1](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.1.0...v1.1.1) (2022-12-24)
+
+
+### Bug Fixes
+
+* show dining room error when the layout could not be generated because of the dining room ([8ca67fe](https://github.com/OndrejNepozitek/KitchenDesigner/commit/8ca67fe8dacbcf99b1d034d838b7177b70d87117))
+
+
+### Miscellaneous
+
+* bump version to 1.1.1 ([7df25c3](https://github.com/OndrejNepozitek/KitchenDesigner/commit/7df25c3735afe842e2a79c91a9e6f6b3abc24dac))
+* forgot to bump version to 1.1.0 ([43f233b](https://github.com/OndrejNepozitek/KitchenDesigner/commit/43f233bdae8e93b8b7d43ca2771d32ca5cdee80c))
+
 ## [1.1.0](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.0.6...v1.1.0) (2022-12-23)
 
 
