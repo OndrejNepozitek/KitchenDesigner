@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.1.2](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.1.1...v1.1.2) (2022-12-27)
+
+
+### Bug Fixes
+
+* change error message because seeded runs are available from level 6 and not 5 ([95b262c](https://github.com/OndrejNepozitek/KitchenDesigner/commit/95b262cce1301edc59e0f955fa85af91f2f7920d))
+
+
+### Miscellaneous
+
+* bump version to 1.1.2 ([6ff5d9b](https://github.com/OndrejNepozitek/KitchenDesigner/commit/6ff5d9b9ae7ece75ee141f838affe689f447ce04))
+
 ## [1.1.1](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.1.0...v1.1.1) (2022-12-24)
 
 
