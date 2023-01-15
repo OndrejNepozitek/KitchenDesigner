@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KitchenDesigner", "ONe.KitchenDesigner\ONe.KitchenDesigner.csproj", "{FD5453CE-61BB-4C15-966B-A7E19179A5B8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ONe.KitchenDesigner.Dependencies", "ONe.KitchenDesigner.Dependencies\ONe.KitchenDesigner.Dependencies.csproj", "{718C3CB0-A629-4808-A7EF-688EF221D7E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{FD5453CE-61BB-4C15-966B-A7E19179A5B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD5453CE-61BB-4C15-966B-A7E19179A5B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD5453CE-61BB-4C15-966B-A7E19179A5B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{718C3CB0-A629-4808-A7EF-688EF221D7E4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{718C3CB0-A629-4808-A7EF-688EF221D7E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{718C3CB0-A629-4808-A7EF-688EF221D7E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{718C3CB0-A629-4808-A7EF-688EF221D7E4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

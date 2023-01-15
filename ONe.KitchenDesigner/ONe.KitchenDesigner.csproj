@@ -15,7 +15,13 @@
     <Import Condition="Exists('./Local.Build.props')" Project="./Local.Build.props" />
     
     <ItemGroup>
-        <PackageReference Include="Lib.Harmony" Version="2.2.2" NoWarn="NU1701" />
-        <PackageReference Include="ONe.PlateUp.Mod.Props" Version="0.0.10" />
+        <PackageReference Include="Lib.Harmony" Version="2.2.2" NoWarn="NU1701">
+            <ExcludeAssets>runtime</ExcludeAssets>
+        </PackageReference>
+        <PackageReference Include="ONe.PlateUp.Mod.Props" Version="0.1.0" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <ProjectReference Include="..\ONe.KitchenDesigner.Dependencies\ONe.KitchenDesigner.Dependencies.csproj" />
     </ItemGroup>
 </Project>

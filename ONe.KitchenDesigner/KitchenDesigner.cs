@@ -14,7 +14,7 @@ namespace ONe.KitchenDesigner
         
         public void PostActivate(Mod mod) 
         {
-            Debug.Log("KitchenDesigner Init");
+            Debug.Log("[KitchenDesigner] Init"); 
             var harmony = new Harmony("ONe.KitchenDesigner");
             harmony.PatchAll(GetType().Assembly);
         }
