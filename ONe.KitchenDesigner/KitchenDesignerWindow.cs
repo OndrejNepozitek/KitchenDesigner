@@ -274,6 +274,7 @@ public static class KitchenDesignerWindow
         GUILayout.Label("Large layout support (experimental)", GUILayout.Width(350));
         LargeLayoutSupport = GUILayout.Toggle(LargeLayoutSupport, LargeLayoutSupport ? "Enabled" : "Disabled", GUILayout.ExpandWidth(true));
         GUILayout.EndHorizontal();
+        GUILayout.Label("Note: The checkbox above should not be needed anymore as large layouts should be detected automatically now.");
         
         GUILayout.EndScrollView();
         
