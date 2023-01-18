@@ -77,7 +77,7 @@ public class MissingDependenciesGUIManager : MonoBehaviour
         
         GUILayout.Label("The Kitchen Designer workshop mod detected that some of its Workshop dependencies are missing. This mod will not work without them.");
         GUILayout.Space(10);
-        GUILayout.Label("Please subscribe to the following workshop mods:");
+        GUILayout.Label("Please subscribe to the following workshop mods and then restart your game:");
 
         var listStyle = new GUIStyle(GUI.skin.label)
         {
@@ -104,6 +104,6 @@ public class MissingDependenciesGUIManager : MonoBehaviour
         
         GUILayout.FlexibleSpace();
         
-        GUILayout.Label("Note: Since January 2023, Kitchen Designer depends on the Harmony workshop mod. If you have problems with installing, uninstalling or updating workshop mods, please try to 'Verify integrity of game files` in Steam.");
+        GUILayout.Label("Note: Since January 2023, Kitchen Designer depends on the Harmony workshop mod. If you have problems with installing, uninstalling or updating workshop mods, please try to 'Verify integrity of game files' in Steam.");
     }
 }
