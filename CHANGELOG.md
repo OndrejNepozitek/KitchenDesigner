@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.2.0](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.1.2...v1.2.0) (2023-01-18)
+
+
+### Bug Fixes
+
+* change wording in dependencies GUI ([6a56968](https://github.com/OndrejNepozitek/KitchenDesigner/commit/6a56968dad64e9036baebe43168512955bc17c1f))
+
+
+### New Features
+
+* detect large layouts automatically ([6da153a](https://github.com/OndrejNepozitek/KitchenDesigner/commit/6da153a45bacbaa31a78f581cba83a71b3829460))
+* scale the GUI so that it is more easily readable on large resolutions ([df21209](https://github.com/OndrejNepozitek/KitchenDesigner/commit/df21209817fb6c4db5d7ec097fafe632e72987fa))
+* show mod version in log when initializing ([b20a398](https://github.com/OndrejNepozitek/KitchenDesigner/commit/b20a398e7156ae4a01ac3f6cb6516c8436e6b348))
+* use Workshop Harmony, add missing dependencies detection ([f0a428b](https://github.com/OndrejNepozitek/KitchenDesigner/commit/f0a428b584d517488aea8652331a2c7cae1a5d92))
+
+
+### Miscellaneous
+
+* bump version to 1.2.0 ([e97f5de](https://github.com/OndrejNepozitek/KitchenDesigner/commit/e97f5de1a2684fe09ca57dfc817fcf9164205159))
+
 ## [1.1.2](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.1.1...v1.1.2) (2022-12-27)
 
 
