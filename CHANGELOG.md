@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.2.1](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.0...v1.2.1) (2023-01-29)
+
+
+### New Features
+
+* allow placing tables near hatches (and other features) if the vanilla decoration code fails ([b9cb292](https://github.com/OndrejNepozitek/KitchenDesigner/commit/b9cb29215cb210cb15f6268c0d618cc8c6e334d8))
+
+
+### Miscellaneous
+
+* bump version to 1.2.1 ([cc52672](https://github.com/OndrejNepozitek/KitchenDesigner/commit/cc52672e492300538e15dee66cde00d36ebca5ab))
+* release 1.2.1 ([3e21f8f](https://github.com/OndrejNepozitek/KitchenDesigner/commit/3e21f8f1d9479aaa64f8b19e1b9bd0862d95acca))
+
 ## [1.2.0](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.1.2...v1.2.0) (2023-01-18)
 
 
