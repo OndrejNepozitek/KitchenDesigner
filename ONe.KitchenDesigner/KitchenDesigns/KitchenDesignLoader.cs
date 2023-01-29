@@ -17,7 +17,12 @@ public static class KitchenDesignLoader
     /// <summary>
     /// Signals whether the <see cref="KitchenDecoratorPatch"/> patch should run.
     /// </summary>
-    public static bool ShouldPatchDecorations { get; internal set; }
+    public static bool ShouldPatchKitchenDecorations { get; internal set; }
+    
+    /// <summary>
+    /// Signals whether the <see cref="DiningDecoratorPatch"/> patch should run.
+    /// </summary>
+    public static bool ShouldPatchDiningDecorations { get; internal set; }
     
     /// <summary>
     /// Signals whether the <see cref="SetSeededRunOverridePatch_CreateSeededRun"/> patch should run.
@@ -60,7 +65,8 @@ public static class KitchenDesignLoader
         try
         {
             IsGenerating = true;
-            ShouldPatchDecorations = false;
+            ShouldPatchKitchenDecorations = false;
+            ShouldPatchDiningDecorations = false;
             ShouldPatchCreateSeededRun = false;
             IsWaitingForSetSeededRunUpdate = false;
 
@@ -100,7 +106,8 @@ public static class KitchenDesignLoader
     internal static void SetSeededRunUpdated()
     {
         UpdateCSeededRunInfo(true, Seed.Generate(new System.Random().Next()));
-        ShouldPatchDecorations = true;
+        ShouldPatchKitchenDecorations = true;
+        ShouldPatchDiningDecorations = true;
         ShouldPatchCreateSeededRun = true;
     }
 
@@ -158,7 +165,8 @@ public static class KitchenDesignLoader
         catch (Exception)
         {
             // Reset the state if something goes wrong
-            ShouldPatchDecorations = false;
+            ShouldPatchKitchenDecorations = false;
+            ShouldPatchDiningDecorations = false;
             ShouldPatchCreateSeededRun = false;
             IsGenerating = false;
             throw;
