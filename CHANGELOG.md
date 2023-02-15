@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.2](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.1...v1.2.2) (2023-02-15)
+
+
+### Bug Fixes
+
+* valentine's update fix ([317a249](https://github.com/OndrejNepozitek/KitchenDesigner/commit/317a249b8430ac7d4fa9f5552005d4486651878c))
+
+
+### Miscellaneous
+
+* bump version ([219169e](https://github.com/OndrejNepozitek/KitchenDesigner/commit/219169e356a6f348f84fb87662d9764648355417))
+
 ## [1.2.1](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.0...v1.2.1) (2023-01-29)
 
 
