@@ -25,9 +25,9 @@ public static class KitchenDesignLoader
     public static bool ShouldPatchDiningDecorations { get; internal set; }
     
     /// <summary>
-    /// Signals whether the <see cref="SetSeededRunOverridePatch_CreateSeededRun"/> patch should run.
+    /// Signals whether the <see cref="CreateSeededRunsPatch_GenerateMap"/> patch should run.
     /// </summary>
-    public static bool ShouldPatchCreateSeededRun { get; internal set; }
+    public static bool ShouldPatchCreateSeededRuns { get; internal set; }
     
     /// <summary>
     /// Signals whether the <see cref="SetSeededRunOverridePatch_OnUpdate"/> patch should run.
@@ -48,6 +48,10 @@ public static class KitchenDesignLoader
     /// The reason why the last generation attempt failed (if it failed)-
     /// </summary>
     public static DesignLoadError LastGenerationError { get; private set; }
+    
+    public static Entity LastGeneratedMapItem { get; internal set; } = Entity.Null;
+    
+    public static RestaurantSetting LastGeneratedSetting { get; private set; }
 
     private static KitchenDesign _kitchenDesign;
     private static Seed _seed;
@@ -67,7 +71,7 @@ public static class KitchenDesignLoader
             IsGenerating = true;
             ShouldPatchKitchenDecorations = false;
             ShouldPatchDiningDecorations = false;
-            ShouldPatchCreateSeededRun = false;
+            ShouldPatchCreateSeededRuns = false;
             IsWaitingForSetSeededRunUpdate = false;
 
             _kitchenDesign = kitchenDesign;
@@ -108,7 +112,7 @@ public static class KitchenDesignLoader
         UpdateCSeededRunInfo(true, Seed.Generate(new System.Random().Next()));
         ShouldPatchKitchenDecorations = true;
         ShouldPatchDiningDecorations = true;
-        ShouldPatchCreateSeededRun = true;
+        ShouldPatchCreateSeededRuns = true;
     }
 
     private static void UpdateCSeededRunInfo(bool isSeedOverride, Seed fixedSeed)
@@ -122,7 +126,7 @@ public static class KitchenDesignLoader
         entityManager.SetComponentData(seededRunInfoEntity, seededRunInfo);
     }
 
-    internal static void LoadKitchenDesign(Entity pedestal)
+    internal static Entity LoadKitchenDesign()
     {
         var seed = _seed;
         UpdateCSeededRunInfo(true, _seed);
@@ -142,13 +146,15 @@ public static class KitchenDesignLoader
                 out var errors
             );
             var isValid = layoutEntity != Entity.Null;
+            var result = Entity.Null;
 
             if (isValid)
             {
                 var mapItem = CreateMapItem(layoutEntity, _kitchenDesign.Setting, seed);
-                entityManager.AddComponentData<CItemHolder>(pedestal, (CItemHolder)mapItem);
-                entityManager.AddComponentData<CHeldBy>(mapItem, (CHeldBy)pedestal);
                 WasLastGenerationSuccessful = true;
+                LastGeneratedMapItem = mapItem;
+                LastGeneratedSetting = _kitchenDesign.Setting;
+                result = mapItem;
             }
             else
             {
@@ -161,13 +167,14 @@ public static class KitchenDesignLoader
 
             Random.state = state;
             IsGenerating = false;
+            return result;
         }
         catch (Exception)
         {
             // Reset the state if something goes wrong
             ShouldPatchKitchenDecorations = false;
             ShouldPatchDiningDecorations = false;
-            ShouldPatchCreateSeededRun = false;
+            ShouldPatchCreateSeededRuns = false;
             IsGenerating = false;
             throw;
         }
@@ -272,21 +279,23 @@ public static class KitchenDesignLoader
     /// </summary>
     private static Entity CreateMapItem(Entity layout, RestaurantSetting setting, Seed seed)
     {
-        var entityManager = World.DefaultGameObjectInjectionWorld.EntityManager;
-        Entity entity = entityManager.CreateEntity((ComponentType)typeof(CCreateItem), (ComponentType)typeof(CHeldBy));
-        entityManager.SetComponentData<CCreateItem>(entity, new CCreateItem()
+        var em = World.DefaultGameObjectInjectionWorld.EntityManager;
+
+        Entity entity = em.CreateEntity((ComponentType) typeof (CCreateItem), (ComponentType) typeof (CHeldBy));
+        em.SetComponentData<CCreateItem>(entity, new CCreateItem()
         {
             ID = AssetReference.MapItem
         });
-        entityManager.AddComponentData<CItemLayoutMap>(entity, new CItemLayoutMap()
+        em.AddComponentData<CItemLayoutMap>(entity, new CItemLayoutMap()
         {
             Layout = layout
         });
-        entityManager.AddComponentData<CSetting>(entity, new CSetting()
+        em.AddComponentData<CSetting>(entity, new CSetting()
         {
             RestaurantSetting = setting.ID,
             FixedSeed = seed
         });
+        
         return entity;
     }
 
