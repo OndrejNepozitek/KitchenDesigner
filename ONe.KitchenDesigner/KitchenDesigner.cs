@@ -6,7 +6,7 @@ namespace ONe.KitchenDesigner
 {
     internal class KitchenDesigner : IModInitializer
     {
-        public const string Version = "1.2.1";
+        public const string Version = "1.2.2";
 
         private static GameObject GameObject { get; set; }
         
