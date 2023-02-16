@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.3](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.2...v1.2.3) (2023-02-16)
+
+
+### Bug Fixes
+
+* prevent crash if layout cannot be decorated ([87dbc80](https://github.com/OndrejNepozitek/KitchenDesigner/commit/87dbc8020a0812381117b0074018d5adad35c58f))
+
+
+### Miscellaneous
+
+* bump version to 1.2.3 ([e58b905](https://github.com/OndrejNepozitek/KitchenDesigner/commit/e58b9050f026697e3cb5d5e3d9b663b48b075cd6))
+
 ## [1.2.2](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.1...v1.2.2) (2023-02-15)
 
 
