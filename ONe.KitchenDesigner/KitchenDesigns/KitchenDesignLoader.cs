@@ -163,6 +163,8 @@ public static class KitchenDesignLoader
 
                 LastGenerationError = mostCommonReason;
                 WasLastGenerationSuccessful = false;
+
+                throw new InvalidOperationException("Could not generate custom kitchen design. If you see this message, there should be a human-friendly error message in the Kitchen Designer window in-game.");
             }
 
             Random.state = state;
