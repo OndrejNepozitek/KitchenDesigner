@@ -12,9 +12,7 @@ namespace ONe.KitchenDesigner.Dependencies;
 public class KitchenDesignerDependencies : IModInitializer
 {
     public MissingDependenciesGUIManager GUIManager { get; private set; }
-    
-    private static readonly FieldInfo AsmField = typeof(AssemblyModPack).GetField("Asm", BindingFlags.Instance | BindingFlags.NonPublic);
-    
+
     public void PostActivate(Mod mod)
     {
         SceneManager.sceneLoaded += (_, _) => PostActivateDelayed(mod);
@@ -94,7 +92,7 @@ public class KitchenDesignerDependencies : IModInitializer
 
         foreach (var modPack in modPacks)
         {
-            var assembly = (Assembly) AsmField.GetValue(modPack);
+            var assembly = modPack.Asm;
             var missingDependencies = GetMissingDependencies(assembly, loadedAssemblies);
             modPacksDependencies.Add(new ModPackDependencies(modPack, assembly, missingDependencies));
         }
