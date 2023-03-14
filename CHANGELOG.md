@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.4](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.3...v1.2.4) (2023-03-14)
+
+
+### Bug Fixes
+
+* patch 1.1.5 ([7c807c0](https://github.com/OndrejNepozitek/KitchenDesigner/commit/7c807c09adb549b0e95aaace8653de2420b15761))
+
+
+### Miscellaneous
+
+* bump version to 1.2.4 ([fb1660e](https://github.com/OndrejNepozitek/KitchenDesigner/commit/fb1660e9ed346a929af1612f702d7c7eb8168523))
+
 ## [1.2.3](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.2...v1.2.3) (2023-02-16)
 
 
