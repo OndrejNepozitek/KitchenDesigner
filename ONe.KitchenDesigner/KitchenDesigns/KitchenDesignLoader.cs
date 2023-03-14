@@ -25,9 +25,9 @@ public static class KitchenDesignLoader
     public static bool ShouldPatchDiningDecorations { get; internal set; }
     
     /// <summary>
-    /// Signals whether the <see cref="CreateSeededRunsPatch_GenerateMap"/> patch should run.
+    /// Signals whether the <see cref="LayoutSeedPatch_GenerateMap"/> patch should run.
     /// </summary>
-    public static bool ShouldPatchCreateSeededRuns { get; internal set; }
+    public static bool ShouldPatchLayoutSeed { get; internal set; }
     
     /// <summary>
     /// Signals whether the <see cref="SetSeededRunOverridePatch_OnUpdate"/> patch should run.
@@ -71,7 +71,7 @@ public static class KitchenDesignLoader
             IsGenerating = true;
             ShouldPatchKitchenDecorations = false;
             ShouldPatchDiningDecorations = false;
-            ShouldPatchCreateSeededRuns = false;
+            ShouldPatchLayoutSeed = false;
             IsWaitingForSetSeededRunUpdate = false;
 
             _kitchenDesign = kitchenDesign;
@@ -112,7 +112,7 @@ public static class KitchenDesignLoader
         UpdateCSeededRunInfo(true, Seed.Generate(new System.Random().Next()));
         ShouldPatchKitchenDecorations = true;
         ShouldPatchDiningDecorations = true;
-        ShouldPatchCreateSeededRuns = true;
+        ShouldPatchLayoutSeed = true;
     }
 
     private static void UpdateCSeededRunInfo(bool isSeedOverride, Seed fixedSeed)
@@ -176,7 +176,7 @@ public static class KitchenDesignLoader
             // Reset the state if something goes wrong
             ShouldPatchKitchenDecorations = false;
             ShouldPatchDiningDecorations = false;
-            ShouldPatchCreateSeededRuns = false;
+            ShouldPatchLayoutSeed = false;
             IsGenerating = false;
             throw;
         }
@@ -273,7 +273,7 @@ public static class KitchenDesignLoader
     /// Creates a map item entity from a given layout, setting and seed.
     /// 
     /// This is the same function as found in:
-    /// <see cref="Kitchen.CreateSeededRuns" />
+    /// <see cref="Kitchen.LayoutSeed" />
     /// <see cref="Kitchen.HandleLayoutRequests" />
     /// <see cref="Kitchen.SetSeededRunOverride" />
     ///

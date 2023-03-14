@@ -4,17 +4,17 @@ using Unity.Entities;
 
 namespace ONe.KitchenDesigner.KitchenDesigns;
 
-[HarmonyPatch(typeof(CreateSeededRuns), nameof(CreateSeededRuns.GenerateMap))]
-public static class CreateSeededRunsPatch_GenerateMap
+[HarmonyPatch(typeof(LayoutSeed), nameof(LayoutSeed.GenerateMap))]
+public static class LayoutSeedPatch_GenerateMap
 {
     public static bool Prefix(ref Entity __result)
     {
-        if (!KitchenDesignLoader.ShouldPatchCreateSeededRuns)
+        if (!KitchenDesignLoader.ShouldPatchLayoutSeed)
         {
             return true;
         }
 
-        KitchenDesignLoader.ShouldPatchCreateSeededRuns = false;
+        KitchenDesignLoader.ShouldPatchLayoutSeed = false;
         var entity = KitchenDesignLoader.LoadKitchenDesign(); 
         __result = entity; 
         
