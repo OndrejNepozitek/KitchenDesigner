@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.5](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.4...v1.2.5) (2023-04-30)
+
+
+### Bug Fixes
+
+* remove unused code that changes background styles for everyone ([488deac](https://github.com/OndrejNepozitek/KitchenDesigner/commit/488deac64e79c30f60320f212ca30f555067297d))
+
+
+### Miscellaneous
+
+* bump version to 1.2.5 ([85d2382](https://github.com/OndrejNepozitek/KitchenDesigner/commit/85d2382fc095163fd33f802f5be596bdbdf802d7))
+
 ## [1.2.4](https://github.com/OndrejNepozitek/KitchenDesigner/compare/v1.2.3...v1.2.4) (2023-03-14)
 
 
