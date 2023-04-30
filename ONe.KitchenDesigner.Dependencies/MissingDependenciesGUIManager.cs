@@ -54,10 +54,7 @@ public class MissingDependenciesGUIManager : MonoBehaviour
             var backgroundTexture = new Texture2D(1, 1, TextureFormat.RGBAFloat, false); 
             backgroundTexture.SetPixel(0, 0, new Color(0.15f, 0.15f, 0.15f, 1));
             backgroundTexture.Apply();
-            
-            var guiStyle = GUI.skin.window;
-            guiStyle.normal.background = backgroundTexture;
-            
+
             GUI.Box(windowRect, GUIContent.none, new GUIStyle { normal = new GUIStyleState { background = backgroundTexture } });
             GUILayout.Window(WindowId, windowRect, Window, "Press H to hide");
             GUI.FocusWindow(WindowId);
