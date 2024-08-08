@@ -3,9 +3,6 @@
         <TargetFramework>netstandard2.0</TargetFramework>
         <LangVersion>latest</LangVersion>
         <DebugType>portable</DebugType>
-        <AssetTargetFallback>
-            net472
-        </AssetTargetFallback>
     </PropertyGroup>
     
     <PropertyGroup>

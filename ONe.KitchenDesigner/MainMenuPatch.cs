@@ -25,7 +25,7 @@ internal class MainMenuPatch
             "Kitchen Designer",
             (int playerId) =>
             {
-                _requestMenuAction.Invoke(__instance, new object[] { PauseMenuAction.CloseMenu });
+                _requestMenuAction.Invoke(__instance, new object[] { new MenuAction(PauseMenuAction.CloseMenu) });
                 KitchenDesigner.KitchenDesignerGUIManager.Show();
             },
             0, // arg
